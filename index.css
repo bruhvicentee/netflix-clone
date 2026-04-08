@@ -1,8 +1,42 @@
-.profiles {}
+body {
+    margin: 0;
+    background-color: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
 
-.profiles .profile {
-    img {
-        max-width: 20%;
-        height: auto;
-    }
+h1 {
+    margin-bottom: 40px;
+}
+
+.profiles {
+    display: flex;
+    gap: 40px;
+}
+
+.profile {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.profile:hover {
+    transform: scale(1.1);
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+.profile p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #aaa;
 }
