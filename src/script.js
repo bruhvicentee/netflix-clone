@@ -7,11 +7,13 @@ if (!localStorage.getItem('profiles')) {
   const defaultProfiles = [
     {
       nome: "Perfil 1",
-      img: "../public/assets/perfil-1.jpg"
+      img: "/public/assets/perfil-1.jpg",
+      kids: false
     },
     {
       nome: "Perfil 2",
-      img: "../public/assets/perfil-2.jpg"
+      img: "/public/assets/perfil-2.jpg",
+      kids: false
     }
   ]
 
@@ -62,7 +64,7 @@ function addAddButton() {
   div.classList.add('profile')
 
   div.innerHTML = `
-    <img src="../public/assets/addProfile.png">
+    <img src="/public/assets/addProfile.png">
     <p>Adicionar Perfil</p>
   `
 

@@ -11,18 +11,79 @@
         <img src="/public/assets/icons.jpg" alt="Logo Netflix">
     </nav>
 
+
     <h1>Editar Perfil</h1>
 
 
-    <input type="text" id="nameInput" placeholder="Nome">
+    <main>
+        <section class="profile-container">
+            <img id="profileImg" width="120">
+
+            <button class="edit-icon" onclick="openImageSelector()">
+                ✏️
+            </button>
+        </section>
 
 
-    <h3>Configurações de classificação etária:</h3>
-    <p>Mostrar títulos de todas as classificações etárias para este perfil</p>
-    <button class="button">Editar</button>
+        <section class="info">
+            <div class="input-group">
+                <input type="text" id="nameInput" required>
+                <label for="nameInput">Nome</label>
+            </div>
+    
+            <div class="language-selector">
+                <p>Idioma:</p>
+                <button onclick="toggleLanguageMenu()" class="language-button">
+                    🌐 <span id="currentLanguage">Português</span>
+                </button>
+    
+                <div id="languageMenu" class="language-menu hidden">
+                    <p onclick="changeLanguage('pt')">Português</p>
+                    <p onclick="changeLanguage('en')">English</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
-    <div class="buttons">
+    <!-- Popup -->
+    <section id="imageModal" class="modal hidden" onclick="closeModal(event)">
+        <div class="modal-content">
+            <h2>Escolha um avatar:</h2>
+
+            <div class="images-grid">
+                <img src="/public/assets/perfil-1.jpg" onclick="selectImage(this.src)">
+                <img src="/public/assets/perfil-2.jpg" onclick="selectImage(this.src)">
+                <img src="/public/assets/perfil-3.jpg" onclick="selectImage(this.src)">
+                <img src="/public/assets/perfil-4.jpg" onclick="selectImage(this.src)">
+
+                <img src="/public/assets/kids-1.jpg" onclick="selectImage(this.src)">
+                <img src="/public/assets/kids-2.png" onclick="selectImage(this.src)">
+                <img src="/public/assets/kids-3.png" onclick="selectImage(this.src)">
+                <img src="/public/assets/kids-4.png" onclick="selectImage(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="classificacao-etaria">
+        <p>Configurações de classificação etária:</h3>
+            
+        <div class="classificacao" id="ratingButton">
+            TODAS AS CLASSIFICAÇÕES ETÁRIAS
+        </div>
+
+        <p>Mostrar títulos de <b id="ratingText">todas as classificações etárias</b> para este perfil</p>
+
+        <button class="edit" onclick="openRatingOptions()">
+            Editar
+        </button>
+    </section >
+
+    <hr>
+
+    <section class="buttons">
         <button class="button save" onclick="save()">
             SALVAR
         </button>
@@ -34,7 +95,8 @@
         <button class="button" onclick="remove()">
             EXCLUIR PERFIL
         </button>
-    </div>
+    </section>
+
 
     <script src="script.js"></script>
 </body>
