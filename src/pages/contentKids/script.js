@@ -105,18 +105,18 @@ async function getMovieTrailer(movieId) {
 async function loadHome() {
     const main = document.getElementById("main")
 
-    const popular = await getNetflixPopular()
-    const topRated = await getNetflixTopRated()
-    const recent = await getNetflixRecent()
+    const kids = await getKidsMovies()
+    const animation = await getKidsAnimationMovies()
+    const topRated = await getKidsTopRated()
 
-    main.appendChild(createRow("Populares na Netflix", popular))
-    main.appendChild(createRow("Mais bem avaliados", topRated))
-    main.appendChild(createRow("Lançamentos", recent))
+    main.appendChild(createRow("Para a Criançada", kids))
+    main.appendChild(createRow("Animações", animation))
+    main.appendChild(createRow("Mais bem Avaliados", topRated))
 }
 
 
 async function loadBanner() {
-  const movies = await getNetflixPopular()
+  const movies = await getKidsMovies()
 
   const movie = movies[Math.floor(Math.random() * movies.length)]
 
@@ -174,7 +174,6 @@ async function loadBanner() {
     });
   });
 }
-
 
 
 document.addEventListener("DOMContentLoaded", async () => {

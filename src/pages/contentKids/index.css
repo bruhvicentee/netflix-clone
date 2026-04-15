@@ -7,6 +7,7 @@ body{
     background-color: rgb(16, 16, 16);
     color: white;
     font-family: Arial, sans-serif;
+    padding-top: 0px;
 }
 
 
@@ -135,6 +136,10 @@ body{
 }
 
 
+
+#main {
+  padding-top: 80px;
+}
 
 .row{
     padding: 30px;

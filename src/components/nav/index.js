@@ -3,11 +3,10 @@ function Navbar(profile = "") {
     <header class="navbar">
 
       <nav class="logo" id="logo">
-        <img src="/public/assets/icons.jpg" alt="Logo Netflix">
+        <img src="/public/assets/icon-netflix.png" alt="Logo Netflix">
       </nav>
 
       <div class="nav-right">
-        <input type="text" placeholder="Buscar" class="search" />
 
         <div class="profile-box">
             <img src="${profile.img}" class="profile-img">
@@ -40,7 +39,7 @@ function injectNavbarStyles() {
     width: 100%;
 
     z-index: 1000;
-    background-color: rgb(16, 16, 16);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
     }
 
     .logo img {
@@ -52,15 +51,6 @@ function injectNavbarStyles() {
     display: flex;
     align-items: center;
     gap: 15px;
-    }
-
-    .search {
-    padding: 10px 15px;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    background: #222;
-    color: white;
     }
 
     .profile-box {

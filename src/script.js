@@ -1,5 +1,11 @@
-function selectProfile(name) {
-    alert("Bem-vindo, " + name + '!')
+function selectProfile(profile) {
+  localStorage.setItem("activeProfile", JSON.stringify(profile));
+
+  if (profile.kids) {
+    window.location.href = "/src/pages/contentKids/index.html";
+  } else {
+    window.location.href = "/src/pages/content/index.html";
+  }
 }
 
 
@@ -45,10 +51,7 @@ function renderProfiles() {
         localStorage.setItem('profileIndex', index)
         window.location.href = '/src/pages/editProfile/index.html'
       } else {
-        //selectProfile(profile.nome)
-
-        localStorage.setItem('activeProfile', JSON.stringify(profile))
-        window.location.href = '/src/pages/content/index.html'
+        selectProfile(profile)
       }
     })
 
