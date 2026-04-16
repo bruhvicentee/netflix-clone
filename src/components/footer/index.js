@@ -3,12 +3,6 @@ function Footer() {
     <footer class="footer">
       <div class="footer-content">
 
-        <div class="footer-links">
-          <span>Início</span>
-          <span>Séries</span>
-          <span>Filmes</span>
-        </div>
-
         <div class="footer-copy">
           © 2026 Netflix Clone
         </div>
@@ -43,18 +37,36 @@ function injectFooterStyles() {
             margin: 0 auto;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 50px;
-        }
 
-        .footer-links span {
-            cursor: pointer;
-            transition: 0.2s;
-        }
+        /* Responsividade */
 
-        .footer-links span:hover {
-            color: white;
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer {
+                font-size: 14px;
+            }
+        }
+            
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 20px 15px;
+            }
+
+            .footer-content {
+                gap: 15px;
+            }
+
+            .footer-copy {
+                font-size: 12px;
+                color: #777;
+            }
         }
     `
 

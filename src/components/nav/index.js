@@ -70,6 +70,51 @@ function injectNavbarStyles() {
     color: #fff;
     font-size: 14px;
     }
+
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 20px;
+      }
+
+      .logo img {
+        width: 140px;
+      }
+
+      .profile-name {
+        display: none; /* some o nome */
+      }
+
+      .profile-img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 8px 15px;
+      }
+
+      .logo img {
+        width: 110px;
+      }
+
+      .nav-right {
+        gap: 10px;
+      }
+
+      .profile-img {
+        width: 28px;
+        height: 28px;
+      }
+
+      .profile-box {
+        gap: 5px;
+      }
+    }
   `
 
   document.head.appendChild(style)

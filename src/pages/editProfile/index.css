@@ -1,13 +1,21 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
     background-color: rgb(16, 16, 16);
     color: white;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
+}
+
+section {
+  margin-top: 30px;
 }
 
 
@@ -34,6 +42,7 @@ hr {
 main {
     display: flex;
     gap: 50px;
+    padding: 20px;
 }
 
 
@@ -60,6 +69,12 @@ main {
 }
 
 
+
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 /* Alterar nome de Perfil */
 .input-group {
@@ -164,6 +179,12 @@ main {
 }
 
 
+.classificacao-etaria {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+}
 
 .classificacao{
     display: inline-block;
@@ -223,4 +244,135 @@ main {
     color: #fff;
     background-color: #E50914;
     border-color: #E50914;
+}
+
+
+/* ================= EDIT PROFILE RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .profile-container img {
+    width: 100px;
+  }
+
+  .input-group {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  hr {
+    width: 80%;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .button {
+    min-width: 140px;
+  }
+
+  .images-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .logo {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  main {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .profile-container img {
+    width: 90px;
+  }
+
+  .info{
+    gap: 5px;
+  }
+
+  .edit-icon {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  #nameInput {
+    font-size: 14px;
+  }
+
+  .language-selector {
+    margin-top: 15px;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  .classificacao {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 15px;
+    gap: 12px;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .save {
+    order: -1;
+  }
+
+  .images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .images-grid img {
+    width: 70px;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
 }

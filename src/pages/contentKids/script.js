@@ -144,14 +144,14 @@ async function loadBanner() {
   `
 
   document.getElementById("playBtn").addEventListener("click", async () => {
-    const trailer = await getMovieTrailer(movie.id);
+    const trailer = await getMovieTrailer(movie.id)
   
     if (!trailer) {
-      alert("Trailer não disponível");
-      return;
+      alert("Trailer não disponível")
+      return
     }
   
-    const videoContainer = document.getElementById("bannerVideo");
+    const videoContainer = document.getElementById("bannerVideo")
   
     videoContainer.innerHTML = `
       <iframe 
@@ -160,19 +160,19 @@ async function loadBanner() {
         allow="autoplay; encrypted-media"
         allowfullscreen>
       </iframe>
-    `;
+    `
   
-    videoContainer.classList.remove("hidden");
+    videoContainer.classList.remove("hidden")
   
-    document.querySelector(".banner-content").style.opacity = "0";
+    document.querySelector(".banner-content").style.opacity = "0"
   
     document.getElementById("closeVideo").addEventListener("click", () => {
-      videoContainer.classList.add("hidden");
-      videoContainer.innerHTML = "";
+      videoContainer.classList.add("hidden")
+      videoContainer.innerHTML = ""
   
-      document.querySelector(".banner-content").style.opacity = "1";
-    });
-  });
+      document.querySelector(".banner-content").style.opacity = "1"
+    })
+  })
 }
 
 

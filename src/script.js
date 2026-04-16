@@ -1,10 +1,10 @@
 function selectProfile(profile) {
-  localStorage.setItem("activeProfile", JSON.stringify(profile));
+  localStorage.setItem("activeProfile", JSON.stringify(profile))
 
   if (profile.kids) {
-    window.location.href = "/src/pages/contentKids/index.html";
+    window.location.href = "/src/pages/contentKids/index.html"
   } else {
-    window.location.href = "/src/pages/content/index.html";
+    window.location.href = "/src/pages/content/index.html"
   }
 }
 
@@ -12,14 +12,14 @@ function selectProfile(profile) {
 if (!localStorage.getItem('profiles')) {
   const defaultProfiles = [
     {
-      nome: "Perfil 1",
+      nome: "Bruna",
       img: "/public/assets/perfil-1.jpg",
       kids: false
     },
     {
-      nome: "Perfil 2",
-      img: "/public/assets/perfil-2.jpg",
-      kids: false
+      nome: "Lulu",
+      img: "/public/assets/kids-1.jpg",
+      kids: true
     }
   ]
 
@@ -78,7 +78,7 @@ const avatars = {
   ]
 }
 
-const MAX_PROFILES = 5;
+const MAX_PROFILES = 5
 
 function addAddButton(totalProfiles) {
   const container = document.querySelector('.profiles')
@@ -103,65 +103,71 @@ function addAddButton(totalProfiles) {
 }
 
 function openModal() {
-  document.getElementById('imageModal').classList.remove('hidden');
-  renderImages();
+  document.getElementById('imageModal').classList.remove('hidden')
+  renderImages()
 }
 
 function closeModal(event) {
   if (!event || event.target.id === 'imageModal') {
-    document.getElementById('imageModal').classList.add('hidden');
+    document.getElementById('imageModal').classList.add('hidden')
   }
 }
 
 function renderImages() {
-  const grid = document.getElementById('imagesGrid');
-  const isKids = document.getElementById('isKids').checked;
+  const grid = document.getElementById('imagesGrid')
+  const isKids = document.getElementById('isKids').checked
 
-  const list = isKids ? avatars.kids : avatars.adult;
+  const list = isKids ? avatars.kids : avatars.adult
 
-  grid.innerHTML = '';
+  grid.innerHTML = ''
 
   list.forEach(img => {
-    const image = document.createElement('img');
-    image.src = img;
+    const image = document.createElement('img')
+    image.src = img
 
     image.addEventListener('click', () => {
-      selectImage(img);
-    });
+      selectImage(img, image)
+    })
 
-    grid.appendChild(image);
-  });
+    grid.appendChild(image)
+  })
 }
 
-document.getElementById('isKids').addEventListener('change', renderImages);
+document.getElementById('isKids').addEventListener('change', renderImages)
 
-let selectedImage = null;
+let selectedImage = null
 
-function selectImage(src) {
-  selectedImage = src;
+function selectImage(src, element) {
+  selectedImage = src
+
+  document.querySelectorAll('#imagesGrid img').forEach(img => {
+    img.classList.remove('selected')
+  })
+
+  element.classList.add('selected')
 }
 
 function createProfile() {
-  const name = document.getElementById('profileName').value;
-  const isKids = document.getElementById('isKids').checked;
+  const name = document.getElementById('profileName').value
+  const isKids = document.getElementById('isKids').checked
 
   if (!name || !selectedImage) {
-    alert('Preencha tudo!');
-    return;
+    alert('Preencha tudo!')
+    return
   }
 
-  const profiles = JSON.parse(localStorage.getItem('profiles'));
+  const profiles = JSON.parse(localStorage.getItem('profiles'))
 
   profiles.push({
     nome: name,
     img: selectedImage,
     kids: isKids
-  });
+  })
 
-  localStorage.setItem('profiles', JSON.stringify(profiles));
+  localStorage.setItem('profiles', JSON.stringify(profiles))
 
-  closeModal();
-  renderProfiles();
+  closeModal()
+  renderProfiles()
 }
 
 
