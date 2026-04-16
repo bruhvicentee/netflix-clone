@@ -129,6 +129,6 @@ function loadNavbar(profile) {
   container.innerHTML = Navbar(profile)
 
   document.getElementById("logo").addEventListener("click", () => {
-    window.location.href = "https://bruhvicentee.github.io/netflix-clone/index.html"
+    window.location.href = "https://bruhvicentee.github.io/netflix-clone/"
   })
 }

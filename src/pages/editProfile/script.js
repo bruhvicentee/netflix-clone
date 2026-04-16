@@ -62,12 +62,12 @@ function save() {
 
   localStorage.setItem('profiles', JSON.stringify(profiles))
 
-  window.location.href = '../../../index.html'
+  window.location.href = '../../../'
 }
 
 
 function cancel() {
-  window.location.href = '../../../index.html'
+  window.location.href = '../../../'
 }
 
 
@@ -80,5 +80,5 @@ function remove() {
 
   localStorage.setItem('profiles', JSON.stringify(profiles))
 
-  window.location.href = '../../../index.html'
+  window.location.href = '../../../'
 }
