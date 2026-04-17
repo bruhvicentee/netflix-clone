@@ -1,6 +1,6 @@
 # Netflix Clone
 
-Um clone da Netflix desenvolvido com **HTML, CSS e JavaScript**, com foco principal na potencialização do aprendizado utilizando IA e na prática de conceitos de front-end, consumo de API e simulação de um ambiente real.
+Um clone da Netflix desenvolvido com **HTML, CSS e JavaScript**, com foco principal na potencialização do aprendizado utilizando IA e na prática de conceitos de front-end e consumo de API.
 
 ---
 
@@ -24,15 +24,9 @@ Um clone da Netflix desenvolvido com **HTML, CSS e JavaScript**, com foco princi
 
 ---
 
-## 📸 Preview
+## Deploy
 
-*(adicionar prints aqui depois)*
-
----
-
-## Acessar o projeto
-
-*(adicionar link do projeto aqui depois)*
+👉 [Acessar projeto](https://bruhvicentee.github.io/netflix-clone/)
 
 ---
 
@@ -52,3 +46,5 @@ Um clone da Netflix desenvolvido com **HTML, CSS e JavaScript**, com foco princi
 ```
 
 ---
+
+© 2026 Bruna Silva Vicente
